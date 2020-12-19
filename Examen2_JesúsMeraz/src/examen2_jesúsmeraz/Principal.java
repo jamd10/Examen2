@@ -5,12 +5,18 @@
  */
 package examen2_jesúsmeraz;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -29,7 +35,7 @@ public class Principal extends javax.swing.JFrame {
         Inicio.setVisible(true);
         Inicio.setLocationRelativeTo(null);
         this.setVisible(false);
-        
+
     }
 
     /**
@@ -572,12 +578,12 @@ public class Principal extends javax.swing.JFrame {
             Class[] types = new Class[]{
                 java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
-            
+
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
         });
-        
+
         Barra hilo = new Barra(Barrita, tabla, orden);
         hilo.start();
     }//GEN-LAST:event_jButton1MouseClicked
@@ -623,7 +629,7 @@ public class Principal extends javax.swing.JFrame {
                 index = i;
             }
         }
-        
+
     }
     private void historialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_historialMouseClicked
         Clienteviejo.setVisible(false);
@@ -653,7 +659,6 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void btFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btFacturaMouseClicked
-        jTextArea1.setText("");
         File archivo = null;
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -683,6 +688,34 @@ public class Principal extends javax.swing.JFrame {
         factura.pack();
         factura.setLocationRelativeTo(this);
         factura.setVisible(true);
+
+        jTextArea1.setText("");
+        File archivo2 = null;
+        FileReader fr2 = null;
+        BufferedReader br = null;
+        archivo2 = new File("./Factura.txt");
+        try {
+            fr2 = new FileReader(archivo2);
+        } catch (FileNotFoundException ex) {
+        }
+        br = new BufferedReader(fr2);
+        String linea2;
+        jTextArea1.setText("");
+        try {
+            while ((linea2 = br.readLine()) != null) {
+                jTextArea1.append(linea2);
+                jTextArea1.append("\n");
+            } // Fin While
+        } catch (IOException ex) {
+        }
+        try {
+            br.close();
+            fr2.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+
+
     }//GEN-LAST:event_btFacturaMouseClicked
 
     /**
