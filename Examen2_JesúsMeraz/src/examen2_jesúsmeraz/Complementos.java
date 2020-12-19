@@ -34,6 +34,6 @@ public class Complementos {
 
     @Override
     public String toString() {
-        return tiempo + "";
+        return cantidad + "";
     }
 }

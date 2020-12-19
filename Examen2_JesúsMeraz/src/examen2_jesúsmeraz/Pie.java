@@ -16,7 +16,7 @@ public class Pie extends Complementos {
     }
 
     public String toString() {
-        return super.toString() + "";
+        return super.toString() + "      Pies";
     }
 
 }

@@ -5,12 +5,10 @@ import java.util.ArrayList;
 public class Clientes {
 
     private String Nombre;
-    private int Codigo;
     private ArrayList<Ordenes> historial = new ArrayList();
 
-    public Clientes(String Nombre, int Codigo) {
+    public Clientes(String Nombre) {
         this.Nombre = Nombre;
-        this.Codigo = Codigo;
     }
 
     public String getNombre() {
@@ -19,14 +17,6 @@ public class Clientes {
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
-    }
-
-    public int getCodigo() {
-        return Codigo;
-    }
-
-    public void setCodigo(int Codigo) {
-        this.Codigo = Codigo;
     }
 
     public Clientes() {

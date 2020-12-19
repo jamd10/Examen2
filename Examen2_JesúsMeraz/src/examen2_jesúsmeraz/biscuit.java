@@ -8,7 +8,7 @@ public class biscuit extends Complementos {
 
     @Override
     public String toString() {
-        return super.toString() + "";
+        return super.toString() + "      Biscuit";
     }
 
 }

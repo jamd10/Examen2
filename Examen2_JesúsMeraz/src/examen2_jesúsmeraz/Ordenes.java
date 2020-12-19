@@ -39,6 +39,9 @@ public class Ordenes {
 
     @Override
     public String toString() {
-        return "Ordenes{" + "piezaPollo=" + piezaPollo + ", completemto=" + completemto + ", numOrden=" + numOrden + '}';
+        return "Ordenes\n" + 
+                "piezaPollo: " + piezaPollo 
+                + "\ncompletemto: " + completemto
+                + "\nnumOrden: " + numOrden + '\n';
     }
 }

@@ -27,7 +27,7 @@ public class Pieza_pollo {
     }
 
     public String toString() {
-        return super.toString() + "";
+        return super.toString() + cantidad + "      Piezas de Pollo";
     }
 
 }
